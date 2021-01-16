@@ -1,3 +1,4 @@
-.vscode/launch.json
-*/.exercism/metadata.json
+.vscode/*
+*/.exercism/
 */README.md
+tools/*
