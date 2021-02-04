@@ -49,11 +49,17 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && rm -rf /tmp/pear
 
-# Install composer
-RUN curl -sSL https://getcomposer.org/installer | php \
-    && chmod +x composer.phar \
-    && mv composer.phar /usr/local/bin/composer
+# Add DS (PHP)
+# RUN yes | pecl install ds
+
+# Install composer (note that this adds a lot of overhead right now due to composer cache)
+# If using a bound volume it might be worth it.
+# RUN curl -sSL https://getcomposer.org/installer | php \
+#     && chmod +x composer.phar \
+#     && mv composer.phar /usr/local/bin/composer
 
 #PHPUnit
 #--dev
-RUN composer require phpunit/phpunit
+# RUN composer require phpunit/phpunit
+
+#Install excercism?
