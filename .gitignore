@@ -1,4 +1,3 @@
-.vscode/*
+.vscode
 */.exercism/
-*/README.md
-tools/*
+tools/
