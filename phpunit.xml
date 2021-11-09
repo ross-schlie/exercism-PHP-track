@@ -11,8 +11,23 @@
          failOnWarning="true"
          verbose="true">
     <testsuites>
-        <testsuite name="default">
+        <testsuite name="bob">
+            <directory suffix="Test.php">bob</directory>
+        </testsuite>
+        <testsuite name="hello-world">
             <directory suffix="Test.php">hello-world</directory>
+        </testsuite>
+        <testsuite name="largest-series-product">
+            <directory suffix="Test.php">largest-series-product</directory>
+        </testsuite>
+        <testsuite name="roman-numerals">
+            <directory suffix="Test.php">roman-numerals</directory>
+        </testsuite>
+        <testsuite name="run-length-encoding">
+            <directory suffix="Test.php">run-length-encoding</directory>
+        </testsuite>
+        <testsuite name="dnd-character">
+            <directory suffix="Test.php">dnd-character</directory>
         </testsuite>
     </testsuites>
 

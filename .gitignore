@@ -1,3 +1,4 @@
 .vscode
 */.exercism/
-tools/
+*/HELP.md
+vendor/
