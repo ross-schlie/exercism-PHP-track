@@ -1,0 +1,14 @@
+{
+    "name": "excercism/php",
+    "type": "project",
+    "description": "Docker PHP-CLI enviroment for writing and testing PHP code and running PHPUnit.",
+    "keywords": [
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
