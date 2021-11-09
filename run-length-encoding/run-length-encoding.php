@@ -3,7 +3,7 @@
 /**
  * RLE encode an imput (no digits)
  * I can't think of a good way of slicing this, so simple N iteration
- * @param String $input 
+ * @param String $input
  * @return String
  */
 function encode($input) {
@@ -13,11 +13,11 @@ function encode($input) {
 
     $inputLength = strlen($input);
     $output = '';
-    $currentCharCount = 1;
-    for ($n = 1; $n <= $inputLength; $n++) {
-        //if the current char is different, 
+    $currentCharCount = 0;
+    for ($n = 0; $n < $inputLength; $n++) {
+        //if the current char is different,
         // then write the occurences of last character to output
-        if (strcmp($input[$n], $input[$n - 1]) !== 0) {
+        if ($n > 0 && strcmp($input[$n], $input[$n - 1]) !== 0) {
             if ($currentCharCount > 1) {
                 $output .= $currentCharCount;
             }
@@ -29,12 +29,18 @@ function encode($input) {
         }
     }
 
+    if ($currentCharCount > 1) {
+        $output .= $currentCharCount;
+    }
+
+    $output .= $input[$n - 1];
+
     return $output;
 }
 
 /**
  * RLE decode an imput
- * 
+ *
  * @param String $input
  * @return String
  */
@@ -59,7 +65,7 @@ function decode($input) {
             if (is_numeric($match[$n])) {
                 continue;
             }
-            
+
             if ($hasSetChar) {
                 //if it's different, then just spit it out
                 $output .= $match[$n];
@@ -76,6 +82,6 @@ function decode($input) {
             }
         }
     }
-    
+
     return $output;
 }
